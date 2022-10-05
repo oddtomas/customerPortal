@@ -1,0 +1,9 @@
+{
+  // "compilerOptions": {
+  //   "paths": {
+  //     "@pages/*": ["pages/*"],
+  //     "@components/*": ["components/*"],
+  //     "@features/*": ["features/*"],
+  //   }
+  // }
+}
