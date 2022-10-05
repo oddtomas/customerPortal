@@ -7,6 +7,7 @@ import {
   Cards,
   Container,
   Header,
+  Icon,
   Link,
   Pagination,
   SpaceBetween,
@@ -165,7 +166,13 @@ export default class Billing extends React.Component {
                 filteringText=""
               />
             }
-            header={<Header>Top Spending Projects</Header>}
+            header={
+              <Header>
+                <p style={this.styles.linkStyle}>
+                  <b>Top Spending Projects</b>
+                </p>
+              </Header>
+            }
             pagination={
               <Pagination
                 currentPageIndex={1}
@@ -184,7 +191,8 @@ export default class Billing extends React.Component {
             fontSize="heading-m"
             href="documents"
           >
-            View past invoices
+            View past invoices &nbsp;
+            <Icon name="external" variant="link" />
           </Link>
         </SpaceBetween>
         {/* </Container> */}
@@ -196,6 +204,12 @@ export default class Billing extends React.Component {
     links: {
       textDecoration: "none",
       color: "black",
+    },
+    linkStyle: {
+      fontFamily: "sans-serif",
+      textDecoration: "none",
+      color: "#0972d3",
+      margin: "0",
     },
   } as const;
 }

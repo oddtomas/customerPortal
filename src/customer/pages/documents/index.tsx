@@ -6,6 +6,7 @@ import {
   CollectionPreferences,
   Container,
   Header,
+  Icon,
   Pagination,
   SpaceBetween,
   Table,
@@ -63,6 +64,12 @@ export default class Billing extends React.Component {
                         cell: (e) => e.alt,
                         sortingField: "alt",
                       },
+                      {
+                        id: "download",
+                        header: "Download",
+                        cell: (e) => e.dl,
+                        sortingField: "dl",
+                      },
                     ]}
                     items={[
                       {
@@ -71,6 +78,7 @@ export default class Billing extends React.Component {
                         description: "This is the first item",
                         type: "1A",
                         size: "Small",
+                        dl: <Icon name="external" variant="link" />,
                       },
                       {
                         name: "BigQuery",
@@ -78,6 +86,7 @@ export default class Billing extends React.Component {
                         description: "This is the second item",
                         type: "1B",
                         size: "Large",
+                        dl: <Icon name="external" variant="link" />,
                       },
                       {
                         name: "GKE",
@@ -85,17 +94,13 @@ export default class Billing extends React.Component {
                         description: "-",
                         type: "1A",
                         size: "Large",
+                        dl: <Icon name="external" variant="link" />,
                       },
                     ]}
                     loadingText="Loading resources"
                     selectionType="multi"
                     trackBy="name"
-                    visibleColumns={[
-                      "variable",
-                      "value",
-                      "type",
-                      "description",
-                    ]}
+                    visibleColumns={["variable", "value", "download"]}
                     empty={
                       <Box textAlign="center" color="inherit">
                         <b>No resources</b>
@@ -145,12 +150,7 @@ export default class Billing extends React.Component {
                         cancelLabel="Cancel"
                         preferences={{
                           pageSize: 10,
-                          visibleContent: [
-                            "variable",
-                            "value",
-                            "type",
-                            "description",
-                          ],
+                          visibleContent: ["variable", "value", "download"],
                         }}
                         pageSizePreference={{
                           title: "Select page size",
@@ -222,6 +222,12 @@ export default class Billing extends React.Component {
                         cell: (e) => e.alt,
                         sortingField: "alt",
                       },
+                      {
+                        id: "download",
+                        header: "Download",
+                        cell: (e) => e.dl,
+                        sortingField: "type",
+                      },
                     ]}
                     items={[
                       {
@@ -230,6 +236,7 @@ export default class Billing extends React.Component {
                         description: "This is the first item",
                         type: "1A",
                         size: "Small",
+                        dl: <Icon name="external" variant="link" />,
                       },
                       {
                         name: "September Invoice",
@@ -237,6 +244,7 @@ export default class Billing extends React.Component {
                         description: "This is the second item",
                         type: "1B",
                         size: "Large",
+                        dl: <Icon name="external" variant="link" />,
                       },
                       {
                         name: "June Invoice",
@@ -244,17 +252,13 @@ export default class Billing extends React.Component {
                         description: "-",
                         type: "1A",
                         size: "Large",
+                        dl: <Icon name="external" variant="link" />,
                       },
                     ]}
                     loadingText="Loading resources"
                     selectionType="multi"
                     trackBy="name"
-                    visibleColumns={[
-                      "variable",
-                      "value",
-                      "type",
-                      "description",
-                    ]}
+                    visibleColumns={["variable", "value", "download"]}
                     empty={
                       <Box textAlign="center" color="inherit">
                         <b>No resources</b>
@@ -304,12 +308,7 @@ export default class Billing extends React.Component {
                         cancelLabel="Cancel"
                         preferences={{
                           pageSize: 10,
-                          visibleContent: [
-                            "variable",
-                            "value",
-                            "type",
-                            "description",
-                          ],
+                          visibleContent: ["variable", "value", "download"],
                         }}
                         pageSizePreference={{
                           title: "Select page size",

@@ -13,6 +13,7 @@ import {
   BarChart,
   Grid,
   ColumnLayout,
+  Icon,
 } from "@cloudscape-design/components";
 
 import { HeaderSlot } from "../../../components/AppSlots";
@@ -21,16 +22,33 @@ export default function Home() {
   const [value, setValue] = React.useState("");
   const [alertVisible, setVisible] = React.useState(true);
 
+  const textStyle = {
+    color: "white",
+    fontFamily: "sans-serif",
+    textDecoration: "none",
+  };
+  const linkStyle = {
+    fontFamily: "sans-serif",
+    textDecoration: "none",
+    color: "#4187f0",
+  };
+
   return (
     <div>
       <HeaderSlot>
-        <SpaceBetween size="m">
+        <SpaceBetween size="s">
           <Header
             variant="h1"
-            info={<Link>Hello Brandon</Link>} //add ink to profile? demographics?
+            // info={<Link>Hello Brandon</Link>}
+            //add ink to profile? demographics?
             // description="When you create an Amazon CloudFront distribution."
             // actions={<Button variant="primary">Create distribution</Button>}
-          ></Header>
+          >
+            Hello Brandon
+          </Header>
+          <a style={textStyle} href="help">
+            <b>Get Help</b> <Icon name="external" variant="link" />
+          </a>
         </SpaceBetween>
       </HeaderSlot>
 
@@ -43,17 +61,69 @@ export default function Home() {
                 {" "}
                 <b>Account Manager:</b>
                 <br />
-                <a href="mailto:first.last@sada.com">first.last@sada.com</a>
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-428-0940
+                </a>
                 <br />
-                <a href="tel:5554280940">+1 (555)-428-0940</a>
+                <br />
+                <b>CE:</b>
+                <br />
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-428-1111
+                </a>
+                <br />
+                <br />
+                <b>CX:</b>
+                <br />
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-322-3967
+                </a>
               </div>
               <div>
                 {" "}
                 <b>TAM:</b>
                 <br />
-                <a href="mailto:first.last@sada.com">first.last@sada.com</a>
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-428-0940
+                </a>
                 <br />
-                <a href="tel:5554280940">+1 (555)-428-0940</a>
+                <br />
+                <b>Sales Rep:</b>
+                <br />
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-428-2222
+                </a>
+                <br />
+                <br />
+                <b>PeopleOps:</b>
+                <br />
+                <a href="mailto:first.last@sada.com" style={linkStyle}>
+                  first.last@sada.com
+                </a>
+                &nbsp; -&nbsp;
+                <a href="tel:5554280940" style={linkStyle}>
+                  +1 (555)-628-3214
+                </a>
               </div>
               <div>
                 {" "}
@@ -163,21 +233,25 @@ export default function Home() {
                       title: "123456789",
                       value: 60,
                       lastUpdate: "Dec 7, 2020",
+                      cost: "$1,000",
                     },
                     {
                       title: "133456797",
                       value: 30,
                       lastUpdate: "Dec 6, 2020",
+                      cost: "$500",
                     },
                     {
                       title: "144456785",
                       value: 10,
                       lastUpdate: "Dec 6, 2020",
+                      cost: "$100",
                     },
                     {
                       title: "Pending",
                       value: 0,
                       lastUpdate: "Dec 7, 2020",
+                      cost: "$0",
                     },
                   ]}
                   detailPopoverContent={(datum, sum) => [
@@ -187,6 +261,7 @@ export default function Home() {
                       value: `${((datum.value / sum) * 100).toFixed(0)}%`,
                     },
                     { key: "Last update on", value: datum.lastUpdate },
+                    { key: "Cost", value: datum.cost },
                   ]}
                   segmentDescription={(datum, sum) =>
                     ` ${((datum.value / sum) * 100).toFixed(0)}% spending`
@@ -204,6 +279,7 @@ export default function Home() {
                   }}
                   ariaDescription="Pie chart showing how many resources are currently in which state."
                   ariaLabel="Pie chart"
+                  className="pieChart"
                   errorText="Error loading data."
                   loadingText="Loading chart"
                   recoveryText="Retry"

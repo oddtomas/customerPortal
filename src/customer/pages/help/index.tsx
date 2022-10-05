@@ -39,25 +39,32 @@ export default class Help extends React.Component {
           </SpaceBetween>
         </HeaderSlot>
         <Container>
-          <SpaceBetween size="s">
+          <SpaceBetween size="m">
             <a
               href="https://cs.sada.com/csm?id=csm_index"
               target="_blank"
-              style={this.styles.links}
+              style={this.styles.linkStyle}
             >
               <b>Chat live with support</b>
             </a>
-            <p>
-              <b>Phone</b> - <a href="tel:8187662400">+1-818-766-2400</a> opt. 1
+
+            <p style={this.styles.linkStyle}>
+              <b>Phone</b> -{" "}
+              <a href="tel:8187662400" style={this.styles.linkStyle}>
+                +1-818-766-2400
+              </a>{" "}
+              opt. 1
               <br />
               <b>Email</b> -{" "}
-              <a href="mailto:support@sada.com">support@sada.com</a>
+              <a href="mailto:support@sada.com" style={this.styles.linkStyle}>
+                support@sada.com
+              </a>
             </p>
 
             <a
               href="https://cs.sada.com/csm?id=csm_sc_category"
               target="_blank"
-              style={this.styles.links}
+              style={this.styles.linkStyle}
             >
               <b>Submit Case or Request</b>
             </a>
@@ -104,7 +111,7 @@ export default class Help extends React.Component {
                 <a
                   href="https://cs.sada.com/csm?id=search&spa=1&q=billing"
                   target="_blank"
-                  style={this.styles.links}
+                  style={this.styles.linkStyle}
                 >
                   <h2>
                     <b>Billing Questions</b>
@@ -117,7 +124,7 @@ export default class Help extends React.Component {
                 <a
                   href="https://sada.com/cloud-computing-insights/cloud-engineering-blog/"
                   target="_blank"
-                  style={this.styles.links}
+                  style={this.styles.linkStyle}
                 >
                   <h2>
                     <b>GCP technical Questions</b>
@@ -130,7 +137,7 @@ export default class Help extends React.Component {
                 <a
                   href="https://sada.com/about/cloud-computing-solutions-services/?"
                   target="_blank"
-                  style={this.styles.links}
+                  style={this.styles.linkStyle}
                 >
                   <h2>
                     <b>SADA services</b>
@@ -151,6 +158,13 @@ export default class Help extends React.Component {
     },
     spacing: {
       padding: "10px",
+    },
+    linkStyle: {
+      fontFamily: "sans-serif",
+      textDecoration: "none",
+      color: "#0972d3",
+      fontSize: "16px",
+      margin: "0px",
     },
   } as const;
 }
